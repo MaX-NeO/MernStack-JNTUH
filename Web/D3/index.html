@@ -9,11 +9,42 @@
 </head>
 
 <body>
-    <form class="login-from">
-        <input type="email" name="" class="login-input" id="" placeholder="Email" required>
-        <input type="password" name="" class="login-input" id="" placeholder="Password" required>
+    <form class="login-from" onsubmit="myfunction(event)">
+        <input type="email" name="" class="login-input" id="email" placeholder="Email" required>
+        <input type="password" name="" class="login-input" id="password" placeholder="Password" required>
         <input type="submit" value="Login" class="login-btn">
     </form>
 </body>
+
+<script>
+    // console.log("Hello");
+    // alert("Hello");
+    let x = "Hi";
+    console.log(x);
+    x = 30
+    console.log(x);
+    x = false
+    console.log(x);
+    x = null
+    console.log(x);
+    x = undefined
+    console.log(x);
+    let obj = {
+        name: "a",
+        loc: "b",
+        age: 200,
+        isalive: false
+    }
+    let obj2 = {
+        name: "a1",
+        loc: "b2",
+        age: 0,
+        isalive: true
+    }
+    console.log(obj, obj2);
+    let arr = ["a", obj, x, obj2]
+    console.log(arr);
+
+</script>
 
 </html>
