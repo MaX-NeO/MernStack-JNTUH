@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <form class="login-from" onsubmit="Login(event)">
+        <input type="email" name="" class="login-input" id="email" placeholder="Email" required>
+        <input type="password" name="" class="login-input" id="password" placeholder="Password" required>
+        <input type="submit" value="Login" class="login-btn">
+    </form>
+    <!-- <button class="login-btn" onclick="myfuction()"> Click </button> -->
+</body>
+
+<script>
+
+    function myfuction() {
+        console.error("hello man")
+        console.warn("hello man")
+    }
+
+    function Login(event) {
+        event.preventDefault()
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        console.log("Login : " + email + " " + password);
+        if (password.length < 5) {
+            alert('password should contains more than 5 letters')
+        } else if (email === "admin@gmail.com" && password === "123456") {
+            alert('Login Success !')
+            API()
+        } else {
+            alert('Invalid Credentials !')
+        }
+    }
+    async function API() {
+        console.log("called API");
+        try {
+            const response = await fetch('https://671b70ef2c842d92c37fec0c.mockapi.io/prodcutsapp/products')
+            if (response.status === 200) {
+                console.log("Success")
+                console.log(await response.json())
+            }
+
+        } catch (error) {
+            console.error(error)
+        }
+    }
+    // API()
+
+    // console.log("Hello");
+    // alert("Hello");
+    let x = "Hi";
+    console.log(x);
+    x = 30
+    console.log(x);
+    x = false
+    console.log(x);
+    x = null
+    console.log(x);
+    x = undefined
+    console.log(x);
+    let obj = {
+        name: "a",
+        loc: "b",
+        age: 200,
+        isalive: false
+    }
+    let obj2 = {
+        name: "a1",
+        loc: "b2",
+        age: 0,
+        isalive: true
+    }
+    console.log(obj2.name)
+    const { name, loc, age, isalive } = obj2
+    console.log(name)
+    // console.log(obj, obj2);
+    let arr = ["a", obj, x, obj2]
+    // console.log(arr);
+    let arr2 = [1, 2, 3, 4, 5, 6];
+    // console.log(arr2);
+    let arr3 = [arr, "sdfghj", arr2];
+    let arr4 = [...arr, "sdfgh", ...arr2];
+    console.log(arr3);
+    console.log(arr4);
+
+    // myfuction()
+
+</script>
+
+</html>
