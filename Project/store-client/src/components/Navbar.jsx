@@ -24,7 +24,7 @@ const Navbar = () => {
                 <div className='w-[40%] h-full flex justify-end items-center '>
                     <div className='w-full h-full flex flex-row justify-end items-center gap-8 font-bold'>
                         {Linksdata.map((link, index) => (
-                            <NavLink to={link.path} key={index} className='h-[65%] w-20 hover:bg-purple-500 hover:text-white flex justify-center items-center rounded-sm'>
+                            <NavLink to={link.path} key={index} className='h-[65%] w-20 hover:bg-purple-500/90 hover:text-white flex justify-center items-center rounded-sm'>
                                 {link.title}
                             </NavLink>
                         ))

@@ -10,16 +10,16 @@ const HomeCarousel = () => {
           {/* <p className="legend">Mobiles</p> */}
 
           <div className="absolute left-2 bottom-2 flex flex-col bg-white rounded-md">
-            <div className="px-6 py-8 sm:p-10 sm:pb-6">
+            <div className="px-6 py-0 sm:p-10 sm:pb-6">
               <div className="grid items-center justify-center w-full grid-cols-1 text-left">
                 <div>
                   <h2 className="text-lg font-medium tracking-tighter text-gray-600 lg:text-3xl">
-                  Mobiles
+                    Mobiles
                   </h2>
                 </div>
                 <div className="mt-6">
                   <p>
-                    <span className="text-5xl font-light tracking-tight text-black">
+                    <span className="text-5xl font-semibold tracking-tight text-purple-600">
                       40%
                     </span>
                     <span className="text-base font-medium text-gray-500"> offer </span>
@@ -28,10 +28,6 @@ const HomeCarousel = () => {
               </div>
             </div>
           </div>
-
-
-
-
         </div>
         <div>
           <img className="h-[50vh] object-cover" src="https://cdn.thewirecutter.com/wp-content/media/2024/07/laptopstopicpage-2048px-3685-2x1-1.jpg?width=2048&quality=75&crop=2:1&auto=webp" />
@@ -41,12 +37,12 @@ const HomeCarousel = () => {
               <div className="grid items-center justify-center w-full grid-cols-1 text-left">
                 <div>
                   <h2 className="text-lg font-medium tracking-tighter text-gray-600 lg:text-3xl">
-                  Laptops
+                    Laptops
                   </h2>
                 </div>
                 <div className="mt-6">
                   <p>
-                    <span className="text-5xl font-light tracking-tight text-black">
+                    <span className="text-5xl font-semibold tracking-tight text-purple-600">
                       30%
                     </span>
                     <span className="text-base font-medium text-gray-500"> offer </span>
@@ -69,7 +65,7 @@ const HomeCarousel = () => {
                 </div>
                 <div className="mt-6">
                   <p>
-                    <span className="text-5xl font-light tracking-tight text-black">
+                    <span className="text-5xl font-semibold tracking-tight text-purple-600">
                       50%
                     </span>
                     <span className="text-base font-medium text-gray-500"> offer </span>

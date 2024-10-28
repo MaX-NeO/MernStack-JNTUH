@@ -1,3 +1,4 @@
+import { IndianRupee } from 'lucide-react'
 import React from 'react'
 
 const ProductCard = ({ img, price, name }) => {
@@ -11,12 +12,12 @@ const ProductCard = ({ img, price, name }) => {
                     <h5 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
                         {name}
                     </h5>
-                    <p className="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
-                        {price}
+                    <p className=" font-sans  leading-relaxed text-inherit antialiased font-bold flex flex-row text-xl items-center">
+                        <IndianRupee className='h-5 w-6'/> {price}
                     </p>
                 </div>
                 <div className="p-6 pt-0 w-full">
-                    <button data-ripple-light="true" type="button" className="w-full select-none rounded-lg bg-purple-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                    <button data-ripple-light="true" type="button" className="w-full select-none rounded-lg bg-purple-500 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-purple-500/20 transition-all hover:shadow-lg hover:shadow-purple-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
                         Buy Now
                     </button>
                 </div>

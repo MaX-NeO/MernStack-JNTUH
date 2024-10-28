@@ -10,7 +10,7 @@ body{
 
 .active{
     color:blueviolet;
-    border: 2px solid blueviolet;
+    /* border: 2px solid blueviolet; */
     /* transition: 0.5s ease-in; */
 }
 
