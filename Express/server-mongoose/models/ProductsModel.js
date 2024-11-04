@@ -19,3 +19,10 @@ const ProductsSchema = new mongoose.Schema({
 const Products = mongoose.model("Products", ProductsSchema)
 
 module.exports = mongoose
+
+
+
+// name: string :required
+// email: string: required : unique
+// phone: number: required : unique
+// address: string 
