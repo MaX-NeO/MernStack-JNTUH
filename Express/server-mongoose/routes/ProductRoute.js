@@ -18,7 +18,7 @@ router.post('/add', async (req, res) => {
         const newproduct = new Products(req.body)
         const { title, img, price } = newproduct
         if (!title || !img || !price) {
-            res.send(401).json({ message: "All fields required" })
+            res.status(400).json({ message: "All fields required" })
         }
         await newproduct.save()
         res.status(200).json(newproduct)
@@ -33,7 +33,7 @@ router.put('/edit/:id', async (req, res) => {
         const id = req.params.id
         const existingproduct = await Products.findOne({ _id: id })
         if (!existingproduct) {
-            res.send(404).json({ message: "Product not found" })
+            res.status(404).json({ message: "Product not found" })
         }
         const updatedproduct = await Products.findByIdAndUpdate(id, req.body, { new: true })
         res.status(200).json(updatedproduct)
@@ -48,7 +48,7 @@ router.delete('/delete/:id', async (req, res) => {
         const id = req.params.id
         const existingproduct = await Products.findOne({ _id: id })
         if (!existingproduct) {
-            res.send(404).json({ message: "Product not found" })
+            res.status(404).json({ message: "Product not found" })
         }
         await Products.findByIdAndDelete(id)
         res.status(200).json({ message: "Product Deleted" })

@@ -16,7 +16,7 @@ router.post('/add', async (req, res) => {
         const neworder = new Orders(req.body)
         const { uid, pid, phone, address, total } = neworder
         if (!uid || !pid || !email || !phone || !address || total) {
-            res.send(401).json({ message: "All fields required" })
+            res.status(400).json({ message: "All fields required" })
         }
         //TODO : Add User & Product Validation 
         await neworder.save()
@@ -31,7 +31,7 @@ router.put('/edit/:id', async (req, res) => {
         const id = req.params.id
         const existingorder = await Orders.findOne({ _id: id })
         if (!existingorder) {
-            res.send(404).json({ message: "Order not found" })
+            res.status(404).json({ message: "Order not found" })
         }
         const updatedorder = await Orders.findByIdAndUpdate(id, req.body, { new: true })
         res.status(200).json(updatedorder)
@@ -45,7 +45,7 @@ router.delete('/delete/:id', async (req, res) => {
         const id = req.params.id
         const existingorder = await Orders.findOne({ _id: id })
         if (!existingorder) {
-            res.send(404).json({ message: "Order not found" })
+            res.status(404).json({ message: "Order not found" })
         }
         await Orders.findByIdAndDelete(id)
         res.status(200).json({ message: "Order Deleted" })
