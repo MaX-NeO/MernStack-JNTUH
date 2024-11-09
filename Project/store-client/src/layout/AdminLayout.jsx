@@ -13,8 +13,7 @@ const AdminLayout = () => {
                     <div className="h-[3rem] w-full flex justify-center items-center">
                         <AdminTopBar />
                     </div>
-                    <div className="w-full h-full min-h-[92vh] bg-blue-500/20 flex justify-center items-center">
-
+                    <div className="w-full h-full min-h-[92vh] flex justify-center items-center">
                         <Outlet />
                     </div>
                 </div>
