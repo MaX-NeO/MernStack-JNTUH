@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router();
 const Orders = require('../models/OrdersModel')
-
-router.get('/all', async (req, res) => {
+const validate = require('../config/auth')
+router.get('/all', validate, async (req, res) => {
     try {
         const orders = await Orders.find()
         res.status(200).json(orders)
