@@ -3,8 +3,6 @@ import AdminPageHeader from '../../components/Admin/AdminPageHeader'
 import { Loader2, Pencil, Trash, TriangleAlert } from 'lucide-react'
 import { getUsers } from '../../api/api'
 
-
-
 const AdminUsers = () => {
   const [users, setUsers] = useState(null)
   const [loading, setLoading] = useState(true)
