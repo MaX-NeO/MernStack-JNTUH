@@ -9,7 +9,6 @@ const getProducts = () => axios.get(`${API}/products/all`)
 
 
 
-
 // OrderEndPonts
 const getOrders = () => axios.get(`${API}/orders/all`)
 
@@ -18,6 +17,7 @@ const getOrders = () => axios.get(`${API}/orders/all`)
 const getUsers = () => axios.get(`${API}/users/all`)
 
 //AuthEndponts
-const Login = (data) => axios.post(`${API}/auth/login`, data)
+const Login = (credentials) => axios.post(`${API}/auth/login`, credentials)
+const Register = (credentials) => axios.post(`${API}/auth/register`, credentials)
 
-export { getProducts, getOrders, getUsers, Login }
+export { getProducts, getOrders, getUsers, Login, Register }

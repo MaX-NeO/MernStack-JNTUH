@@ -49,10 +49,12 @@ const AdminOrders = () => {
         )
     }
     return (
-        <div className='w-full h-full flex flex-col justify-start items-start'>
-            <AdminPageHeader title='Orders' />
+        <div className='w-full flex flex-col justify-start items-start'>
+            <div className='w-full flex flex-row justify-between items-center my-4 shadow-md rounded-md p-1 border'>
+                <AdminPageHeader title='Orders' />
+            </div>
             <table className='w-full h-full border-collapse border shadow-lg rounded-md'>
-                <thead className='shadow-sm font-bold text-purple-500 text-left'>
+                <thead className='shadow-md font-bold text-purple-500 text-left rounded-md'>
                     <tr>
                         <th className='p-6'>UID</th>
                         <th className='p-6'>PID</th>
