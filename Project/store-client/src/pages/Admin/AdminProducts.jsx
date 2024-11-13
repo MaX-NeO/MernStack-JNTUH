@@ -53,9 +53,9 @@ const AdminProducts = () => {
 
   }
   const editHelper = (product) => {
+    console.log(product)
     setCurrentProduct(product)
     setShowEdit(true)
-
   }
   const handleEdit = async (e) => {
     e.preventDefault()
