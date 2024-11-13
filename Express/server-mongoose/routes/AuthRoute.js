@@ -16,13 +16,13 @@ router.post('/register', async (req, res) => {
         //Email
         const exisitingemail = await Users.findOne({ email })
         if (exisitingemail) {
-            return res.status(500).json({ message: `User with ${email} already exists !` })
+            return res.status(409).json({ message: `User with ${email} already exists !` })
         }
 
         //Phone
         const exisitingphone = await Users.findOne({ phone })
         if (exisitingphone) {
-            return res.status(500).json({ message: `User with ${phone} already exists !` })
+            return res.status(409).json({ message: `User with ${phone} already exists !` })
         }
         const salt = await bcrypt.genSalt(10)
         const hashedpassword = await bcrypt.hash(password, salt)
