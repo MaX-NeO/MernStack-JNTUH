@@ -22,7 +22,7 @@ const getUsersCount = () => axios.get(`${API}/users/count`)
 const addUser = (user) => axios.post(`${API}/users/add`, user)
 const editUser = (user, id) => axios.put(`${API}/users/edit/${id}`, user)
 const deleteUser = (id) => axios.delete(`${API}/users/delete/${id}`)
-
+const resetPassword = (password, id) => axios.put(`${API}/users/resetpassword/${id}`, password)
 //AuthEndponts
 const Login = (credentials) => axios.post(`${API}/auth/login`, credentials)
 const Register = (credentials) => axios.post(`${API}/auth/register`, credentials)
@@ -40,6 +40,7 @@ export {
     addUser,
     editUser,
     deleteUser,
+    resetPassword,
     getOrders,
     getOrdersCount,
 }
