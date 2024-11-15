@@ -51,4 +51,4 @@ const validateTokenAdmin = (req, res, next) => {
 }
 
 
-module.exports = validateToken;
+module.exports = { validateToken, validateTokenAdmin }
