@@ -19,6 +19,7 @@ const AdminUsers = () => {
   const fetchData = async () => {
     try {
       const res = await getUsers()
+      // console.log(res.data);
       if (res.status === 200) {
         setUsers(res.data)
       }
@@ -133,6 +134,7 @@ const AdminUsers = () => {
       </>
     )
   }
+
   return (
     <div className='w-full flex flex-col justify-start items-start'>
       <div className='w-full flex flex-row justify-between items-center my-4 shadow-md rounded-md p-1 border'>

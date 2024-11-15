@@ -31,6 +31,26 @@ const getEmail = () => {
         return null;
     }
 }
+const getName = () => {
+    const token = getToken()
+    if (token) {
+        const data = jwtDecode(token)
+        return data.name;
+    }
+    else {
+        return null;
+    }
+}
+const getUID = () => {
+    const token = getToken()
+    if (token) {
+        const data = jwtDecode(token)
+        return data.id;
+    }
+    else {
+        return null;
+    }
+}
 const isLoginValid = () => {
     const token = getToken()
     if (token) {
@@ -46,4 +66,4 @@ const isLoginValid = () => {
         return false;
     }
 }
-export { storeToken, getToken, getEmail, getRole, isLoginValid }
+export { storeToken, getToken, getEmail, getRole, isLoginValid, getName, getUID }

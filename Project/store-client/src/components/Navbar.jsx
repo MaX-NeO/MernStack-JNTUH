@@ -1,7 +1,9 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { Cross, User, X } from 'lucide-react'
 import { useRef, useState } from "react"
 import { Login, Register } from "../api/api"
+import { getRole, storeToken } from "../service/auth"
+import { toast } from "sonner"
 const Navbar = () => {
     //false (Login hidden) -> true (login visible) Conditional render the login screen 
     const [showLogin, setShowLogin] = useState(false)
@@ -10,7 +12,7 @@ const Navbar = () => {
     const passwordRef = useRef('')
     const nameRef = useRef('')
     const phoneRef = useRef('')
-
+    const navigate = useNavigate()
     const Linksdata = [
         {
             title: 'Home',
@@ -35,8 +37,21 @@ const Navbar = () => {
             const response = await Login(credentials)
             const data = await JSON.stringify(response.data)
             if (response.status === 200) {
-                console.log(response.data.token)
+                const token = response.data.token
+                // console.log(response.data.token)
+                toast.success("Login Success")
                 setShowLogin(false)
+                storeToken(token)
+                if (token) {
+                    const role = getRole()
+                    if (role === "ADMIN") {
+                        //navigate to dashboard
+                        navigate('/admin/dashboard')
+                    } else if (role === "USER") {
+                        //navigate to products
+                        navigate('/products')
+                    }
+                }
             } else {
                 console.log("Login Error" + data)
             }
@@ -47,6 +62,7 @@ const Navbar = () => {
 
         console.log(credentials)
     }
+
     const handleRegister = async (e) => {
         e.preventDefault()
         const credentials = {
