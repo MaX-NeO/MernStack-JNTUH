@@ -20,10 +20,6 @@ const OrdersSchema = new mongoose.Schema({
     address: {
         type: String,
         required: true,
-    },
-    orderedAt: {
-        type: Date,
-        default: Date.now,
     }
 })
 
