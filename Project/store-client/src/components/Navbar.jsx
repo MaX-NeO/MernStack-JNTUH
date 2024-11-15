@@ -57,7 +57,11 @@ const Navbar = () => {
             }
 
         } catch (error) {
-            console.error(error)
+            if (error.response && (error.response.status === 401 || error.response.status === 400)) {
+                toast.warning(error.response.data.message)
+            } else {
+                toast.error("Server Error")
+            }
         }
 
         console.log(credentials)
@@ -77,14 +81,21 @@ const Navbar = () => {
             const data = await JSON.stringify(response.data)
             if (response.status === 200) {
                 console.log("Signup Success" + data)
+                toast.success("Signup Success")
                 setShowRegister(false)
                 setShowLogin(true)
-            } else {
-                console.log("Signup Error" + data)
+            }
+            else {
+                toast.error("Error while signup")
             }
 
         } catch (error) {
-            console.error(error)
+            // console.error(error)
+            if (error.response && (error.response.status === 409 || error.response && error.response.status === 400)) {
+                toast.warning(error.response.data.message)
+            } else {
+                toast.error("Server Error")
+            }
         }
 
         console.log(credentials)

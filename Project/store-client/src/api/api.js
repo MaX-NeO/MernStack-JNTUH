@@ -26,14 +26,15 @@ axiosInstance.interceptors.request.use(
 // ProductEndPonts
 const getProducts = () => axios.get(`${API}/products/all`)
 const getProductsCount = () => axiosInstance.get(`/products/count`)
-const addProduct = (product) => axios.post(`${API}/products/add`, product)
-const editProduct = (product, id) => axios.put(`${API}/products/edit/${id}`, product)
-const deleteProduct = (id) => axios.delete(`${API}/products/delete/${id}`)
+const addProduct = (product) => axiosInstance.post(`${API}/products/add`, product)
+const editProduct = (product, id) => axiosInstance.put(`${API}/products/edit/${id}`, product)
+const deleteProduct = (id) => axiosInstance.delete(`${API}/products/delete/${id}`)
 
 // OrderEndPonts
-const getOrders = () => axios.get(`${API}/orders/all`)
+const getOrders = () => axiosInstance.get(`${API}/orders/all`)
+const addOrder = (order) => axiosInstance.post('/orders/add', order)
 const getOrdersCount = () => axiosInstance.get(`/orders/count`)
-const deleteOrder = (id) => axios.delete(`${API}/orders/delete/${id}`)
+const deleteOrder = (id) => axiosInstance.delete(`${API}/orders/delete/${id}`)
 
 
 //UserEndPoints
@@ -62,6 +63,7 @@ export {
     deleteUser,
     resetPassword,
     getOrders,
+    addOrder,
     getOrdersCount,
     deleteOrder
 }

@@ -125,11 +125,22 @@ const AdminUsers = () => {
   if (!users || users.length === 0) {
     return (
       <>
-        <div className='w-screen h-[90vh] flex flex-col justify-center items-center'>
-          <TriangleAlert className='text-orange-400 h-12 w-12' />
-          <p>
-            No Users Available !
-          </p>
+        <div className='w-full h-full flex flex-col justify-start items-start'>
+          <div className='w-full flex flex-row justify-between items-center my-4 shadow-md rounded-md p-1 border'>
+            <AdminPageHeader title='Users' />
+            <button className='w-10 h-10 font-bold flex justify-center items-center border-2 border-green-500 rounded-md
+         text-green-500 shadow-md hover:text-white hover:bg-green-500 hover:shadow-md
+          hover:shadow-green-400'
+              onClick={() => setShowAdd(!showAdd)} >
+              <Plus className='w-8 h-8' />
+            </button>
+          </div>
+          <div className='h-[60vh] w-full flex flex-col justify-center items-center gap-3'>
+            <TriangleAlert className='text-orange-400 h-12 w-12' />
+            <p>
+              No Users Available !
+            </p>
+          </div>
         </div>
       </>
     )
